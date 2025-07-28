@@ -1,7 +1,20 @@
+const user = {
+  first_name: "Sammy",
+  last_name: "Shark",
+  age: 25,
+  followers: 987,
+};
 
+user.followers = 988;
+user.address = {
+  lane: "1",
+  city: "Auckland",
+};
 
-let seas = ["Black Sea", "Caribbean Sea", "North Sea", "Baltic Sea"];
+user.todolist = [];
+user.sayHi = () => {
+  console.log("say hi");
+};
+console.log(user);
 
-console.log(seas.indexOf("North Sea"));
-
-console.log(seas.length);
+user.sayHi();
