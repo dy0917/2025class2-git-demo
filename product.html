@@ -1,2 +1,110 @@
-<!DOCTYPE html>
-<html></html>
+<html>
+  <head>
+    <title>Page Title</title>
+
+    <style>
+      .demo {
+        background-color: brown;
+        margin-bottom: 20px;
+      }
+      #h1 {
+        font-size: larger;
+      }
+
+      a:visited {
+        background-color: aquamarine;
+      }
+      a:hover {
+        background-color: black;
+      }
+      div:before{
+        content: "thisis a div";
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <video controls autoplay>
+        <source src="assets/flower.webm" />
+      </video>
+      <img src="images/my_photo.jpg" alt="Me on holidays" />
+      <form onsubmit="formSubmit(event)">
+        <input type="text" />
+        <button>Submit</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>January</td>
+            <td>$100</td>
+          </tr>
+        </tbody>
+      </table>
+      <iframe src="http://www.google.com"></iframe>
+      <ol type="i">
+        <li>
+          title
+          <ul>
+            <li>
+              temp
+              <ul>
+                <li>temp</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>title</li>
+        <li>title</li>
+        <li>title</li>
+      </ol>
+    </div>
+    <div id="div1">
+      <h1 class="demo">A heading</h1>
+      <p>
+        This is a paragraph & 1 &lt; 2
+        asdfjkasdfjlkadsj;ldsafasdkjlzadsfjkadsjkfadskjldsfajklds; This is a
+        paragraph asdfjkasdfjlkadsj;ldsafasdkjlzadsfjkadsjkfadskjldsfajklds;
+        This is a paragraph
+        asdfjkasdfjlkadsj;ldsafasdkjlzadsfjkadsjkfadskjldsfajklds; This is a
+        paragraph asdfjkasdfjlkadsj;ldsafasdkjlzadsfjkadsjkfadskjldsfajklds;
+      </p>
+
+      <a href="https://www.google.com" target="_blank">Google</a>
+    </div>
+    <div>
+      <h1 class="demo">A heading2</h1>
+      <p>This is a paragraph</p>
+      <a href="courses/html-course.html">Link text</a>
+    </div>
+    <!--
+    thisis a html comment-->
+    <div>
+      <h1 class="demo">A heading</h1>
+      <p>This is a paragraph</p>
+      <a href="courses/html-course.html">Link text</a>
+    </div>
+    <div>
+      <h1>A heading</h1>
+      <p>This is a paragraph</p>
+      <a href="courses/html-course.html">Link text</a>
+    </div>
+  </body>
+  <script>
+    // this is a comment
+    const h1 = document.getElementById("div1");
+    const classdemo = document.getElementsByClassName("demo");
+    console.log(h1);
+    console.log("classdemo", classdemo);
+    function formSubmit(e) {
+      e.preventDefault();
+      console.log("formSubmit");
+    }
+  </script>
+</html>

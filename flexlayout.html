@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Demonstration</title>
+    <link href="mainStyle" type="css"/>
+    <link href="pageStyle" type="css"/>
+    <style>
+      :root {
+        --primary-color: #ffee77;
+        --secondary-color: #77eeff;
+        --border-1: solid 5px var(--secondary-color);
+        --spacing: 5px;
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 18px;
+      }
+      header {
+        background: black;
+        padding: 1em;
+        display: flex;
+      }
+      #logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #b200ff;
+      }
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0 5px;
+        color: yellow;
+      }
+      main {
+        max-width: 80%;
+        margin: 1em auto;
+      }
+      .box {
+        color: var(--secondary-color);
+        background: var(--primary-color);
+        border: var(--border-1);
+        padding: calc(var(--spacing) * 4);
+        border-radius: 1em;
+        min-width: 300px;
+        min-height: 300px;
+        /* border: 2px solid #404040; */
+        /* background: #b2b2b2; */
+        margin: 1em;
+      }
+      #main-menu {
+        margin-left: auto;
+        margin-top: 0.6em;
+        float: right;
+        display: flex;
+      }
+      #boxes {
+        display: grid;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- flex container #1 -->
+      <div id="logo"></div>
+      <nav id="main-menu">
+        <!-- flex container #2-->
+        <div class="menu">Menu #1</div>
+        <div class="menu">Menu #2</div>
+        <div class="menu">Menu #3</div>
+      </nav>
+    </header>
+    <main>
+      <section id="boxes">
+        <!-- flex container #3 -->
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+    </main>
+  </body>
+</html>
+<!-- this CodePen also demonstrates flexbox properties and usage: https://codepen.io/chriscoyier/pen/kNZRER -->
