@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      font-size: xx-large;
+    }
+
+    div.divDemo#thisistheDiv {
+      /* specific selector matches
+
+    type, class, and id */
+      background-color: blue;
+    }
+
+    .parentDiv {
+      color: yellow;
+    }
+
+    .parentDiv > .child {
+         background-color: black;
+      background-color: red;
+    }
+    .parentDiv > .label {
+      background-color: black;
+    }
+    a:hover {
+      background-color: red;
+    }
+  </style>
+  <body>
+    <form method="POST" action="http://localhost:3000/profile">
+      <div class="parentDiv" id="thisistheDiv">
+        <label class="label">FirstName</label>
+        <input class="child" id="firstName" name="firstName" type="text" />
+      </div>
+      <div class="">
+        <label>LastName</label>
+        <input id="lastName" class="child" name="lastName" type="text" />
+      </div>
+      <button type="submit">submit</button>
+    </form>
+  </body>
+  <script>
+    // function formSubmit(event) {
+    //   event.preventDefault();
+    //   //   const formData = new FormData(event.target);
+    //   //   for (const [name, value] of formData.entries()) {
+    //   //     console.log(`${name}: ${value}`);
+    //   //   }
+    //   const firstname = document.getElementById("firstName").value;
+    //   const lastname = document.getElementById("lastName").value;
+    //   sayHi(firstname, lastname);
+    // }
+    // function sayHi(fn, ln) {
+    //   console.log(`Hi, ${fn} ${ln}`);
+    // }
+  </script>
+</html>
