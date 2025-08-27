@@ -1,14 +1,16 @@
-// function sum(a, b) {
-//   if (typeof a !== "number") {
-//     return "A must be a number";
-//   }
+function sum(a, b) {
+  if (typeof a !== "number") {
+    return "A must be a number";
+  }
 
-//   if (typeof b !== "number") {
-//     return "B must be a number";
-//   }
+  if (typeof b !== "number") {
+    return "B must be a number";
+  }
 
-//   return a + b;
-// }
+  return a + b;
+}
+
+sum(1, 2);
 
 // console.log(sum("a", "b"));
 // console.log(sum(1, 2));
@@ -34,9 +36,7 @@ function multiple(a, b) {
   return a * b;
 }
 
-
 console.log(multiple("a", "b"));
-
 
 // if (multiple(2, 3) == 6) {
 //   console.log(" multiple function is ok");

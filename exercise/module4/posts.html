@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <template id="postTemplate">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" id="postDel" class="btn btn-danger">Del</a>
+        </div>
+      </div>
+    </template>
+    <div class="container">
+      <div class="row" id="postContainer"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let posts = [];
+      async function getData() {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts?_limit=20"
+        );
+        const posts = await response.json();
+        return posts;
+      }
+
+      async function initPosts() {
+        posts = await getData();
+        posts.forEach((post, i) => {
+          displayPost(post, i);
+        });
+      }
+
+      function displayPost(
+        { title, body }, // card object
+        index
+      ) {
+        // clone the template
+        const template = document
+          .getElementById("postTemplate")
+          .content.cloneNode(true);
+        // populate the template
+        template.querySelector(".card-title").innerText = title;
+        template.querySelector(".card-text").innerText = body;
+        template.getElementById("postDel").addEventListener("click", () => {
+          posts.splice(index, 1);
+          render();
+        });
+        // include the populated template into the page
+        document.querySelector("#postContainer").appendChild(template);
+      }
+
+      initPosts();
+
+      function render() {
+        document.querySelector("#postContainer").innerHTML = "";
+        posts.forEach((post, i) => {
+          displayPost(post, i);
+        });
+      }
+    </script>
+  </body>
+</html>
